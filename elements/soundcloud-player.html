@@ -14,7 +14,13 @@
       }
     </style>
 
-    <iframe class="soundcloud-embed {{ cssClass }}" src="{{ playerUrl }}"></iframe>
+    <template bind if="{{ isTrack || isPlaylist }}">
+      <iframe class="soundcloud-embed {{ cssClass }}" src="{{ playerUrl }}"></iframe>
+    </template>
+
+    <template bind if="{{ !isTrack && !isPlaylist }}">
+      <p><code>&lt;soundcloud-player&gt;</code> requires either a <em>track-id</em> or <em>playlist-id</em> attribute.</p>
+    </template>
   </template>
 
   <script>
@@ -33,7 +39,7 @@
           this.cssClass = "soundcloud-playlist";
         }
         else {
-          throw new Error("SoundCloud player requires either a `track-id` or `playlist-id` value.");
+          return; // Invalid - no track ID or playlist ID provided.
         }
         this.playerUrl = this.getPlayerUrl();
       },
