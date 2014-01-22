@@ -1,6 +1,6 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
 
-<polymer-element name="soundcloud-player" attributes="trackid color autoplay showartwork">
+<polymer-element name="soundcloud-player" attributes="track-id color auto-play show-artwork">
   <template>
     <style>
       :host .soundcloud-embed {
@@ -11,28 +11,28 @@
       }
     </style>
 
-    <iframe class="soundcloud-embed" src="{{ playerurl }}"></iframe>
+    <iframe class="soundcloud-embed" src="{{ playerUrl }}"></iframe>
   </template>
 
   <script>
     Polymer('soundcloud-player', {
-      color: 'ff6600',
-      autoplay: false,
-      showartwork: true,
+      "color": 'ff6600',
+      "auto-play": false,
+      "show-artwork": true,
 
       ready: function() {
-        if (!this.trackid) {
+        if (!this["track-id"]) {
           throw new Error("SoundCloud player requires a `trackid` value.");
         }
-        this.playerurl = this.getPlayerUrl();
+        this.playerUrl = this.getPlayerUrl();
       },
 
       getPlayerUrl: function() {
         var params = {
-          url: "https://api.soundcloud.com/tracks/" + this.trackid,
+          url: "https://api.soundcloud.com/tracks/" + this["track-id"],
           color: this.color,
-          auto_play: this.autoplay,
-          show_artwork: this.showartwork
+          auto_play: this["auto-play"],
+          show_artwork: this["show-artwork"]
         };
         var paramPairs = [];
         for(var key in params) {
