@@ -1,7 +1,7 @@
 <polymer-element name="soundcloud-player" attributes="track-id playlist-id color auto-play show-artwork">
   <template>
     <style>
-      :host .soundcloud-embed {
+      :host iframe {
         border: none;
         overflow: hidden;
         width: 100%;
@@ -15,7 +15,7 @@
     </style>
 
     <template bind if="{{ isTrack || isPlaylist }}">
-      <iframe class="soundcloud-embed {{ cssClass }}" src="{{ playerUrl }}"></iframe>
+      <iframe class="{{ cssClass }}" src="{{ playerUrl }}"></iframe>
     </template>
   </template>
 
