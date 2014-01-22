@@ -1,16 +1,15 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
 
-<polymer-element name="soundcloud-player">
+<polymer-element name="soundcloud-player" attributes="trackid color autoplay showartwork">
   <template>
-    <iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/{{ trackId }}&amp;color={{ color }}&amp;auto_play={{ autoPlay }}&amp;show_artwork={{ showArtwork }}"></iframe>
+    <iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/{{ trackid }}&amp;color={{ color }}&amp;auto_play={{ autoplay }}&amp;show_artwork={{ showartwork }}"></iframe>
   </template>
 
   <script>
     Polymer('soundcloud-player', {
-      trackId: '126873817',
       color: 'ff6600',
-      autoPlay: false,
-      showArtwork: true
+      autoplay: false,
+      showartwork: true
     });
   </script>
 </polymer-element>
