@@ -17,10 +17,6 @@
     <template bind if="{{ isTrack || isPlaylist }}">
       <iframe class="soundcloud-embed {{ cssClass }}" src="{{ playerUrl }}"></iframe>
     </template>
-
-    <template bind if="{{ !isTrack && !isPlaylist }}">
-      <p><code>&lt;soundcloud-player&gt;</code> requires either a <em>track-id</em> or <em>playlist-id</em> attribute.</p>
-    </template>
   </template>
 
   <script>
