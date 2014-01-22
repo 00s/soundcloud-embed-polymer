@@ -3,11 +3,14 @@
 <head>
   <meta charset="utf-8">
   <title>Soundcloud Embedded Player Web Component</title>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/polymer/0.0.20130711/polymer.min.js"></script>
+  <!-- 1. Load platform support before any code that touches the DOM. -->
+  <script src="bower_components/platform/platform.js"></script>
+  <!-- 2. Load the component using an HTML Import -->
   <link rel="import" href="src/soundcloud-player.html">
 </head>
 <body>
 
+  <!-- 3. Declare the element by its tag. -->
   <soundcloud-player></soundcloud-player>
 
 </body>
