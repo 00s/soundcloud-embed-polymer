@@ -18,7 +18,12 @@
     Polymer('soundcloud-player', {
       color: 'ff6600',
       autoplay: false,
-      showartwork: true
+      showartwork: true,
+      ready: function() {
+        if (!this.trackid) {
+          throw new Error("Soundcloud player requires a `trackid` value.");
+        }
+      }
     });
   </script>
 </polymer-element>
