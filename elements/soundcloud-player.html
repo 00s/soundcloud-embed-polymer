@@ -11,7 +11,7 @@
       }
     </style>
 
-    <iframe class="soundcloud-embed" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/{{ trackid }}&amp;color={{ color }}&amp;auto_play={{ autoplay }}&amp;show_artwork={{ showartwork }}"></iframe>
+    <iframe class="soundcloud-embed" src="{{ playerurl }}"></iframe>
   </template>
 
   <script>
@@ -19,10 +19,26 @@
       color: 'ff6600',
       autoplay: false,
       showartwork: true,
+
       ready: function() {
         if (!this.trackid) {
           throw new Error("Soundcloud player requires a `trackid` value.");
         }
+        this.playerurl = this.getPlayerUrl();
+      },
+
+      getPlayerUrl: function() {
+        var params = {
+          url: "https://api.soundcloud.com/tracks/" + this.trackid,
+          color: this.color,
+          auto_play: this.autoplay,
+          show_artwork: this.showartwork
+        };
+        var paramPairs = [];
+        for(var key in params) {
+          paramPairs.push(key + "=" + encodeURIComponent(params[key]));
+        }
+        return "https://w.soundcloud.com/player/?" + paramPairs.join("&amp;");
       }
     });
   </script>
