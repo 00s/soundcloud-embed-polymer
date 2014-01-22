@@ -1,6 +1,6 @@
 # &lt;soundcloud-player&gt;
 
-Web Component wrapper for SoundCloud player using Polymer.
+[Web Component](http://www.w3.org/TR/components-intro/) wrapper for SoundCloud player using [Polymer](http://www.polymer-project.org/).
 
 ## [Demo](http://6.github.io/soundcloud-embed-polymer/)
 
