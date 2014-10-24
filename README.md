@@ -6,20 +6,13 @@
 
 ## Usage
 
-1. Import Web Components polyfill:
-
-  ```html
-  <script src="bower_components/platform/platform.js"></script>
-  <link rel="import" href="bower_components/polymer/polymer.html">
-  ```
-
-2. Import Custom Element:
+1. Import Custom Element:
 
   ```html
   <link rel="import" href="elements/soundcloud-player.html">
   ```
 
-3. Start using it!
+2. Start using it!
 
   ```html
   <soundcloud-player track-id="126873817"></soundcloud-player>
