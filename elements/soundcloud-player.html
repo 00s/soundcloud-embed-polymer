@@ -17,7 +17,7 @@
     </style>
 
     <template bind if="{{ isTrack || isPlaylist }}">
-      <iframe class="{{ cssClass }}" src="{{ playerUrl }}"></iframe>
+      <iframe class="{{ cssClass }}" src="{{ getPlayerUrl() }}"></iframe>
     </template>
   </template>
 
@@ -36,10 +36,6 @@
           this.isPlaylist = true;
           this.cssClass = "soundcloud-playlist";
         }
-        else {
-          return; // Invalid - no track ID or playlist ID provided.
-        }
-        this.playerUrl = this.getPlayerUrl();
       },
 
       getPlayerUrl: function() {
