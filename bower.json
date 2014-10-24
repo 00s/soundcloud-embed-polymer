@@ -2,7 +2,6 @@
   "name": "soundcloud-embed-polymer",
   "version": "0.0.1",
   "dependencies": {
-    "platform": "Polymer/platform#~0.1.3",
-    "polymer": "Polymer/polymer#~0.1.3"
+    "polymer": "Polymer/polymer#0.4.2"
   }
 }

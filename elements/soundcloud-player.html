@@ -1,3 +1,5 @@
+<link rel="import" href="../components/polymer/polymer.html">
+
 <polymer-element name="soundcloud-player" attributes="track-id playlist-id color auto-play show-artwork">
   <template>
     <style>
@@ -20,7 +22,7 @@
   </template>
 
   <script>
-    Polymer('soundcloud-player', {
+    Polymer({
       "color": 'ff6600',
       "auto-play": false,
       "show-artwork": true,
